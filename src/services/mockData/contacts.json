@@ -1,0 +1,170 @@
+[
+  {
+    "Id": 1,
+    "email": "john.smith@techcorp.com",
+    "firstName": "John",
+    "lastName": "Smith",
+    "company": "TechCorp Inc",
+    "customFields": {
+      "position": "CEO",
+      "industry": "Technology",
+      "employees": "500-1000"
+    },
+    "lists": ["Prospects", "C-Level"],
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "email": "sarah.johnson@innovate.io",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "company": "Innovate Solutions",
+    "customFields": {
+      "position": "VP Marketing",
+      "industry": "SaaS",
+      "employees": "100-500"
+    },
+    "lists": ["Marketing Leaders", "SaaS"],
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "email": "mike.davis@startup.co",
+    "firstName": "Mike",
+    "lastName": "Davis",
+    "company": "Startup Co",
+    "customFields": {
+      "position": "Founder",
+      "industry": "Fintech",
+      "employees": "10-50"
+    },
+    "lists": ["Founders", "Fintech"],
+    "status": "active"
+  },
+  {
+    "Id": 4,
+    "email": "emily.wilson@enterprise.com",
+    "firstName": "Emily",
+    "lastName": "Wilson",
+    "company": "Enterprise Corp",
+    "customFields": {
+      "position": "CTO",
+      "industry": "Healthcare",
+      "employees": "1000+"
+    },
+    "lists": ["Enterprise", "Healthcare"],
+    "status": "unsubscribed"
+  },
+  {
+    "Id": 5,
+    "email": "david.brown@consulting.net",
+    "firstName": "David",
+    "lastName": "Brown",
+    "company": "Brown Consulting",
+    "customFields": {
+      "position": "Partner",
+      "industry": "Consulting",
+      "employees": "50-100"
+    },
+    "lists": ["Consultants"],
+    "status": "active"
+  },
+  {
+    "Id": 6,
+    "email": "lisa.anderson@retail.com",
+    "firstName": "Lisa",
+    "lastName": "Anderson",
+    "company": "Retail Giants",
+    "customFields": {
+      "position": "CMO",
+      "industry": "Retail",
+      "employees": "500-1000"
+    },
+    "lists": ["C-Level", "Retail"],
+    "status": "bounced"
+  },
+  {
+    "Id": 7,
+    "email": "robert.taylor@manufacturing.biz",
+    "firstName": "Robert",
+    "lastName": "Taylor",
+    "company": "Taylor Manufacturing",
+    "customFields": {
+      "position": "Operations Director",
+      "industry": "Manufacturing",
+      "employees": "200-500"
+    },
+    "lists": ["Operations", "Manufacturing"],
+    "status": "active"
+  },
+  {
+    "Id": 8,
+    "email": "jennifer.white@agency.co",
+    "firstName": "Jennifer",
+    "lastName": "White",
+    "company": "Creative Agency",
+    "customFields": {
+      "position": "Creative Director",
+      "industry": "Marketing",
+      "employees": "10-50"
+    },
+    "lists": ["Agencies", "Creative"],
+    "status": "active"
+  },
+  {
+    "Id": 9,
+    "email": "thomas.garcia@finance.org",
+    "firstName": "Thomas",
+    "lastName": "Garcia",
+    "company": "Finance Solutions",
+    "customFields": {
+      "position": "CFO",
+      "industry": "Financial Services",
+      "employees": "100-500"
+    },
+    "lists": ["C-Level", "Finance"],
+    "status": "active"
+  },
+  {
+    "Id": 10,
+    "email": "amanda.martinez@education.edu",
+    "firstName": "Amanda",
+    "lastName": "Martinez",
+    "company": "Education First",
+    "customFields": {
+      "position": "Dean",
+      "industry": "Education",
+      "employees": "500-1000"
+    },
+    "lists": ["Education", "Leadership"],
+    "status": "active"
+  },
+  {
+    "Id": 11,
+    "email": "christopher.lee@logistics.com",
+    "firstName": "Christopher",
+    "lastName": "Lee",
+    "company": "Global Logistics",
+    "customFields": {
+      "position": "VP Operations",
+      "industry": "Logistics",
+      "employees": "1000+"
+    },
+    "lists": ["Enterprise", "Logistics"],
+    "status": "active"
+  },
+  {
+    "Id": 12,
+    "email": "stephanie.clark@nonprofit.org",
+    "firstName": "Stephanie",
+    "lastName": "Clark",
+    "company": "Hope Foundation",
+    "customFields": {
+      "position": "Executive Director",
+      "industry": "Non-profit",
+      "employees": "50-100"
+    },
+    "lists": ["Non-profit", "Directors"],
+    "status": "active"
+  }
+]

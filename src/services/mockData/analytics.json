@@ -1,0 +1,16 @@
+{
+  "emailVolume": {
+    "dates": ["Jan 1", "Jan 2", "Jan 3", "Jan 4", "Jan 5", "Jan 6", "Jan 7"],
+    "sent": [245, 312, 189, 456, 523, 378, 294],
+    "delivered": [238, 301, 183, 441, 507, 365, 286],
+    "opened": [89, 126, 78, 187, 214, 156, 123]
+  },
+  "engagement": [85.2, 24.8, 3.2, 2.1],
+  "campaignPerformance": [
+    { "name": "Q4 Launch", "openRate": 28.4 },
+    { "name": "Survey", "openRate": 31.2 },
+    { "name": "Webinar", "openRate": 35.1 },
+    { "name": "Follow-up", "openRate": 42.9 },
+    { "name": "Demo", "openRate": 38.7 }
+  ]
+}

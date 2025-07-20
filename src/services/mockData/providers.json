@@ -1,0 +1,70 @@
+[
+  {
+    "Id": 1,
+    "name": "Primary SMTP",
+    "type": "smtp",
+    "credentials": {
+      "host": "smtp.example.com",
+      "port": 587,
+      "username": "user@example.com",
+      "password": "encrypted_password"
+    },
+    "dailyLimit": 1000,
+    "sentToday": 450,
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "name": "AWS SES Production",
+    "type": "ses",
+    "credentials": {
+      "region": "us-east-1",
+      "accessKeyId": "AKIA...",
+      "secretAccessKey": "encrypted_key",
+      "fromEmail": "noreply@company.com"
+    },
+    "dailyLimit": 5000,
+    "sentToday": 1200,
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "name": "SMTPGo Backup",
+    "type": "smtpgo",
+    "credentials": {
+      "apiKey": "sg_api_key",
+      "fromEmail": "backup@company.com"
+    },
+    "dailyLimit": 2000,
+    "sentToday": 0,
+    "status": "paused"
+  },
+  {
+    "Id": 4,
+    "name": "Development SMTP",
+    "type": "smtp",
+    "credentials": {
+      "host": "smtp.dev.com",
+      "port": 587,
+      "username": "dev@company.com",
+      "password": "encrypted_password"
+    },
+    "dailyLimit": 100,
+    "sentToday": 25,
+    "status": "active"
+  },
+  {
+    "Id": 5,
+    "name": "AWS SES Staging",
+    "type": "ses",
+    "credentials": {
+      "region": "us-west-2",
+      "accessKeyId": "AKIA...",
+      "secretAccessKey": "encrypted_key",
+      "fromEmail": "staging@company.com"
+    },
+    "dailyLimit": 1000,
+    "sentToday": 156,
+    "status": "error"
+  }
+]

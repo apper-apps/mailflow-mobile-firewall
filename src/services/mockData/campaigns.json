@@ -1,0 +1,152 @@
+[
+  {
+    "Id": 1,
+    "name": "Q4 Product Launch",
+    "workspaceId": "ws_1",
+    "workspace": "Sales Team",
+    "status": "active",
+    "emailContent": {
+      "subject": "Introducing Our Latest Innovation",
+      "body": "Hi {{firstName}}, we're excited to share our newest product with you..."
+    },
+    "contactListIds": ["list_1", "list_2"],
+    "providerIds": [1, 2],
+    "schedule": {
+      "type": "immediate",
+      "sendTime": null
+    },
+    "metrics": {
+      "sent": 1250,
+      "delivered": 1198,
+      "opened": 355,
+      "clicked": 42,
+      "bounced": 52,
+      "unsubscribed": 8
+    }
+  },
+  {
+    "Id": 2,
+    "name": "Customer Feedback Survey",
+    "workspaceId": "ws_2",
+    "workspace": "Marketing Team",
+    "status": "completed",
+    "emailContent": {
+      "subject": "We'd love your feedback on {{company}}",
+      "body": "Dear {{firstName}}, your opinion matters to us..."
+    },
+    "contactListIds": ["list_3"],
+    "providerIds": [1],
+    "schedule": {
+      "type": "scheduled",
+      "sendTime": "2024-01-15T09:00:00Z"
+    },
+    "metrics": {
+      "sent": 890,
+      "delivered": 867,
+      "opened": 278,
+      "clicked": 34,
+      "bounced": 23,
+      "unsubscribed": 5
+    }
+  },
+  {
+    "Id": 3,
+    "name": "Holiday Promotion",
+    "workspaceId": "ws_1",
+    "workspace": "Sales Team",
+    "status": "scheduled",
+    "emailContent": {
+      "subject": "Special Holiday Offer for {{company}}",
+      "body": "Season's Greetings {{firstName}}! We have a special offer..."
+    },
+    "contactListIds": ["list_1", "list_4"],
+    "providerIds": [2],
+    "schedule": {
+      "type": "scheduled",
+      "sendTime": "2024-12-20T10:00:00Z"
+    },
+    "metrics": {
+      "sent": 0,
+      "delivered": 0,
+      "opened": 0,
+      "clicked": 0,
+      "bounced": 0,
+      "unsubscribed": 0
+    }
+  },
+  {
+    "Id": 4,
+    "name": "Partnership Outreach",
+    "workspaceId": "ws_3",
+    "workspace": "Business Dev",
+    "status": "draft",
+    "emailContent": {
+      "subject": "Partnership Opportunity with {{company}}",
+      "body": "Hello {{firstName}}, I believe there's a great opportunity..."
+    },
+    "contactListIds": ["list_5"],
+    "providerIds": [1, 3],
+    "schedule": {
+      "type": "draft",
+      "sendTime": null
+    },
+    "metrics": {
+      "sent": 0,
+      "delivered": 0,
+      "opened": 0,
+      "clicked": 0,
+      "bounced": 0,
+      "unsubscribed": 0
+    }
+  },
+  {
+    "Id": 5,
+    "name": "Product Demo Follow-up",
+    "workspaceId": "ws_1",
+    "workspace": "Sales Team",
+    "status": "paused",
+    "emailContent": {
+      "subject": "Thanks for attending our demo, {{firstName}}",
+      "body": "Hi {{firstName}}, it was great meeting you during our product demo..."
+    },
+    "contactListIds": ["list_6"],
+    "providerIds": [2],
+    "schedule": {
+      "type": "immediate",
+      "sendTime": null
+    },
+    "metrics": {
+      "sent": 156,
+      "delivered": 151,
+      "opened": 67,
+      "clicked": 12,
+      "bounced": 5,
+      "unsubscribed": 2
+    }
+  },
+  {
+    "Id": 6,
+    "name": "Webinar Invitation",
+    "workspaceId": "ws_2",
+    "workspace": "Marketing Team",
+    "status": "completed",
+    "emailContent": {
+      "subject": "Join our exclusive webinar, {{firstName}}",
+      "body": "Dear {{firstName}}, you're invited to our upcoming webinar..."
+    },
+    "contactListIds": ["list_2", "list_3"],
+    "providerIds": [1, 2],
+    "schedule": {
+      "type": "scheduled",
+      "sendTime": "2024-01-10T14:00:00Z"
+    },
+    "metrics": {
+      "sent": 2150,
+      "delivered": 2089,
+      "opened": 732,
+      "clicked": 156,
+      "bounced": 61,
+      "unsubscribed": 18
+    }
+  }
+]
