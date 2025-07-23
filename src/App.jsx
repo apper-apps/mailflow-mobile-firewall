@@ -3,6 +3,9 @@ import { ToastContainer } from "react-toastify";
 import Layout from "@/components/organisms/Layout";
 import Dashboard from "@/components/pages/Dashboard";
 import Campaigns from "@/components/pages/Campaigns";
+import CampaignDetails from "@/components/pages/CampaignDetails";
+import CampaignCreate from "@/components/pages/CampaignCreate";
+import CampaignEdit from "@/components/pages/CampaignEdit";
 import Contacts from "@/components/pages/Contacts";
 import Providers from "@/components/pages/Providers";
 import Analytics from "@/components/pages/Analytics";
@@ -13,9 +16,12 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Layout />}>
+<Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="campaigns" element={<Campaigns />} />
+            <Route path="campaigns/new" element={<CampaignCreate />} />
+            <Route path="campaigns/:id" element={<CampaignDetails />} />
+            <Route path="campaigns/:id/edit" element={<CampaignEdit />} />
             <Route path="contacts" element={<Contacts />} />
             <Route path="providers" element={<Providers />} />
             <Route path="analytics" element={<Analytics />} />
