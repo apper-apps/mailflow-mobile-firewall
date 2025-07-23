@@ -11,6 +11,64 @@ export const contactService = {
     });
   },
 
+  async getFiltered(filters) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (!filters || filters.length === 0) {
+          resolve([...contacts]);
+          return;
+        }
+
+        const filteredContacts = contacts.filter(contact => {
+          return filters.reduce((result, filter, index) => {
+            if (!filter.value && filter.field !== 'customField') return result;
+            
+            let matches = false;
+            const value = filter.value.toLowerCase();
+            
+            switch (filter.field) {
+              case 'text':
+                matches = contact.email.toLowerCase().includes(value) ||
+                         contact.firstName.toLowerCase().includes(value) ||
+                         contact.lastName.toLowerCase().includes(value) ||
+                         contact.company.toLowerCase().includes(value);
+                break;
+              case 'equals':
+                matches = contact.email.toLowerCase() === value ||
+                         contact.firstName.toLowerCase() === value ||
+                         contact.lastName.toLowerCase() === value ||
+                         contact.company.toLowerCase() === value;
+                break;
+              case 'status':
+                matches = contact.status === filter.value;
+                break;
+              case 'lists':
+                matches = contact.lists.includes(filter.value);
+                break;
+              case 'company':
+                matches = contact.company.toLowerCase().includes(value);
+                break;
+              case 'customField':
+                if (filter.customField && filter.value) {
+                  const customFieldValue = contact.customFields?.[filter.customField];
+                  matches = customFieldValue && customFieldValue.toLowerCase().includes(value);
+                }
+                break;
+              default:
+                matches = false;
+            }
+            
+            if (index === 0) return matches;
+            
+            return filter.logic === 'OR' ? result || matches : result && matches;
+          }, true);
+        });
+
+        resolve([...filteredContacts]);
+      }, 400);
+    });
+  },
+
   async getById(Id) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {

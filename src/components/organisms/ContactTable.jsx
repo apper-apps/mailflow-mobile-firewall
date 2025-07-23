@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/atoms/Card";
 import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
-import SearchBar from "@/components/molecules/SearchBar";
+import FilterBuilder from "@/components/molecules/FilterBuilder";
 import ApperIcon from "@/components/ApperIcon";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
@@ -13,8 +13,8 @@ import { toast } from "react-toastify";
 const ContactTable = () => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+const [error, setError] = useState("");
+  const [filterCriteria, setFilterCriteria] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
 
   const loadContacts = async () => {
@@ -55,12 +55,56 @@ const ContactTable = () => {
     setSelectedContacts([]);
   };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.company.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+const applyFilters = (contacts, filters) => {
+    if (!filters || filters.length === 0) return contacts;
+    
+    return contacts.filter(contact => {
+      return filters.reduce((result, filter, index) => {
+        if (!filter.value && filter.field !== 'customField') return result;
+        
+        let matches = false;
+        const value = filter.value.toLowerCase();
+        
+        switch (filter.field) {
+          case 'text':
+            matches = contact.email.toLowerCase().includes(value) ||
+                     contact.firstName.toLowerCase().includes(value) ||
+                     contact.lastName.toLowerCase().includes(value) ||
+                     contact.company.toLowerCase().includes(value);
+            break;
+          case 'equals':
+            matches = contact.email.toLowerCase() === value ||
+                     contact.firstName.toLowerCase() === value ||
+                     contact.lastName.toLowerCase() === value ||
+                     contact.company.toLowerCase() === value;
+            break;
+          case 'status':
+            matches = contact.status === filter.value;
+            break;
+          case 'lists':
+            matches = contact.lists.includes(filter.value);
+            break;
+          case 'company':
+            matches = contact.company.toLowerCase().includes(value);
+            break;
+          case 'customField':
+            if (filter.customField && filter.value) {
+              const customFieldValue = contact.customFields?.[filter.customField];
+              matches = customFieldValue && customFieldValue.toLowerCase().includes(value);
+            }
+            break;
+          default:
+            matches = false;
+        }
+        
+        if (index === 0) return matches;
+        
+        return filter.logic === 'OR' ? result || matches : result && matches;
+      }, true);
+    });
+  };
+
+  const filteredContacts = applyFilters(contacts, filterCriteria);
 
   if (loading) return <Loading />;
   if (error) return <Error message={error} onRetry={loadContacts} />;
@@ -72,12 +116,10 @@ const ContactTable = () => {
           <h2 className="text-2xl font-bold text-gray-900">Contacts</h2>
           <p className="text-gray-600">{contacts.length} total contacts</p>
         </div>
-        <div className="flex items-center space-x-4">
-          <SearchBar
-            placeholder="Search contacts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-64"
+<div className="flex items-center space-x-4">
+          <FilterBuilder
+            onFiltersChange={setFilterCriteria}
+            className="w-auto"
           />
           <Button variant="outline">
             <ApperIcon name="Upload" className="h-4 w-4 mr-2" />
